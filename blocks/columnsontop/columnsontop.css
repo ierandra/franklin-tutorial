@@ -1,33 +1,21 @@
-.columnstwo > div {
-    background-color: #ebebeb;
-    margin-bottom: 1em;
+.columnsontop > div {
 }
 
-.columnstwo img {
-   display: flex !important;
-   max-width: 709px !important;
-   width: 709px !important;
-   max-height: 502px !important;
-   height: 502px !important;
-   margin-left: 0px !important;
-}
-
-.columnstwo a {
+.columnsontop a {
     font-weight: 400;
     color: #202020;
     font-size: 36px;
     text-decoration: none;
 }
 
-.columnstwo h2 {
+.columnsontop h2 {
     margin-left: 50px;
     line-height: 1.2;
 }
 
-.columnstwo p {
+.columnsontop p {
     display: block;
     font-size: 14px;
-    margin: 10;
     line-height: 1.75;
     text-align: left;
     color: #202020;
@@ -36,20 +24,35 @@
     margin-left: 50px;
 }
 
+.columnsontop .columns-1-cols {
+    background-color: #202020;
+}
+
 
 @media (min-width: 900px) {
-    .columnstwo > div {
+    .columnsontop > div {
         display: flex;
         align-items: center;
         flex-direction: unset;
     }
 
-    .columnstwo > div > div {
+    .columnsontop > div > div {
         flex: 1;
         margin-left: 32px;
     }
 
-    .columnstwo > div > div:first-of-type {
+    .columnsontop > div > div:first-of-type {
         margin-left: unset;
     }
 }
+
+.columnsontop #column1 {
+    margin-top: -180px;
+    background-color: white;
+    z-index: 1;
+    position: relative;
+    max-width: 1200;
+    max-height: 209;
+    
+}
+

@@ -12,8 +12,8 @@
 
  :root {
   /* colors */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
+  --link-color: black;
+  --link-hover-color: yellow;
   --background-color: #fff;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
@@ -71,7 +71,11 @@ h4, h5, h6 {
 }
 
 h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-xl) }
+h2 { font-size: Asar,Georgia,Times New Roman,Times,serif;
+     font-weight: 400;
+     margin-top: 27px;
+     margin-bottom: 13.5px;
+     }
 h3 { font-size: var(--heading-font-size-l) }
 h4 { font-size: var(--heading-font-size-m) }
 h5 { font-size: var(--heading-font-size-s) }
@@ -89,7 +93,6 @@ a:any-link {
 
 a:hover {
   text-decoration: underline;
-  color: var(--link-hover-color);
 }
 
 code, pre, samp {
@@ -108,23 +111,16 @@ pre {
 /* buttons */
 
 a.button:any-link, button {
-  font-family: var(--body-font-family);
+  font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 2px solid transparent;
-  padding: 5px 30px;
-  text-align: center;
-  font-style: normal; 
+  padding: 12px 30px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  color: var(--background-color);
-  background-color: var(--link-color);
-  margin: 16px 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border-radius: 30px;
+  color: #202020;
+  background-color: #ffea00;
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
@@ -163,6 +159,7 @@ main input:hover {
 }
 
 main .section {
+  margin-top: 50px;
   padding: 64px 16px;
 }
 
@@ -199,14 +196,16 @@ hr {
 }
 
 main img {
-  max-width: 100%;
-  width: auto;
-  height: auto;
+  max-width: 1680px;
+  width: 1680px;
+  max-height: 645px;
+  height: 645px;
+  margin-left: -258px;
 }
 
 @media (min-width: 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 10px 32px;
   }  
 }
 
@@ -234,4 +233,11 @@ main .section[data-section-status='initialized'] {
 
 main .section.highlight {
   background-color: var(--highlight-background-color);
+}
+
+body .sectionend {
+    border: none;
+    border-bottom: 2px solid #ebebeb;
+    width: 1100px;
+    margin: 0 auto;
 }

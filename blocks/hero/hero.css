@@ -1,11 +1,15 @@
 /* block specific CSS goes here */
 
+.section {
+    margin-top: 100px !important;
+}
+
 main .hero-container > div {
     max-width: unset;
 }
   
 main .hero-container {
-    padding: 0;
+    padding-top: 100;
 }
   
 main .hero {

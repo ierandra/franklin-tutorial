@@ -104,31 +104,63 @@ export default async function decorate(block) {
     nav.id = 'nav';
     nav.innerHTML = html;
 
-    const classes = ['brand', 'sections', 'tools'];
-    classes.forEach((c, i) => {
+    shadowHeaderOnScroll(nav);
+
+    //add settings section
+    const settingsSection = document.createElement('div');
+    settingsSection.id = 'settings';
+    nav.appendChild(settingsSection);
+
+    //add navigation section
+    const navigationSection = document.createElement('div');
+    navigationSection.id = 'navigations';
+    navigationSection.style['padding-bottom'] = '40px';
+    nav.appendChild(navigationSection);
+
+    changeMarginTopOnScroll(navigationSection);
+
+    const classes = ['settings', 'brand', 'sections', 'tools'];
+    classes.forEach((e, i) => {
       const section = nav.children[i];
-      if (section) section.classList.add(`nav-${c}`);
+      if (section) {
+       section.classList.add(`nav-${e}`);
+      }
     });
 
-    const navSections = nav.querySelector('.nav-sections');
-    if (navSections) {
-      navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
-        if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-        navSection.addEventListener('click', () => {
-          if (isDesktop.matches) {
-            const expanded = navSection.getAttribute('aria-expanded') === 'true';
-            toggleAllNavSections(navSections);
-            navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-          }
-        });
-      });
+    // move settings
+    settingsSection.appendChild(nav.querySelector('div'));
+    navigationSection.appendChild(nav.querySelector('div'));
+    navigationSection.appendChild(nav.querySelector('div'));
+    navigationSection.appendChild(nav.querySelector('div'));
+
+    movePinDiv(settingsSection.querySelector('div'), settingsSection.querySelectorAll('div > p'));
+
+    const brandSections = nav.querySelector('.nav-brand').querySelector('picture');
+    if(brandSections){
+      var linkToImage = document.createElement('a');
+      linkToImage.href = '/';
+      brandSections.parentNode.replaceChild(linkToImage, brandSections);
+      linkToImage.appendChild(brandSections);
     }
+
+    const navSections = nav.querySelector('.nav-sections');
+
+    const searchSection = nav.querySelector('.nav-tools');
+    const searchIcon = nav.querySelector('.nav-tools p');
+
+    if(searchSection){
+      var input = document.createElement('input');
+      input.id = 'searchInput';
+      input.type = 'text';
+      input.placeholder = 'SEARCH';
+      searchSection.appendChild(input);
+    }
+
 
     // hamburger for mobile
     const hamburger = document.createElement('div');
     hamburger.classList.add('nav-hamburger');
-    hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
-        <span class="nav-hamburger-icon"></span>
+    hamburger.innerHTML = `<button type="button" style="visibility: hidden" aria-controls="nav" aria-label="Open navigation">
       </button>`;
     hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
     nav.prepend(hamburger);
@@ -144,3 +176,36 @@ export default async function decorate(block) {
     block.append(navWrapper);
   }
 }
+
+
+function shadowHeaderOnScroll(element) {
+window.addEventListener('scroll', function() {
+  if (window.pageYOffset > 0) {
+    element.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.4)';
+  } else {
+    element.style.boxShadow = 'none';
+  }
+});
+}
+
+function changeMarginTopOnScroll(element) {
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 0) {
+      element.style['padding-top'] = '10px';
+      element.style['padding-bottom'] = '10px';
+    } else {
+      element.style['padding-top'] = '40px';
+      element.style['padding-bottom'] = '40px';
+    }
+  });
+}
+
+function movePinDiv(parent, element){
+  element.forEach((e, i) =>{
+      const div = document.createElement('div');
+      div.id = "setting"+i;
+      parent.appendChild(div);
+      div.appendChild(e);
+  });
+}
+

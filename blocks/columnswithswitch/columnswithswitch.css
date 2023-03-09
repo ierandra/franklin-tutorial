@@ -1,0 +1,100 @@
+.columnswithswitch a {
+    font-weight: 400;
+    color: #202020;
+    font-size: 36px;
+    text-decoration: none;
+}
+
+.columnswithswitch h2 {
+    margin-left: 50px;
+    line-height: 1.2;
+}
+
+.columnswithswitch p {
+    display: block;
+    font-size: 14px;
+    line-height: 1.75;
+    text-align: left;
+    color: #202020;
+    text-align: left;
+    margin-right: 20px;
+    margin-left: 50px;
+}
+
+.columnswithswitch .columns-1-cols {
+    background-color: #202020;
+}
+
+
+@media (min-width: 900px) {
+    .columnswithswitch > div {
+        align-items: center;
+        flex-direction: unset;
+    }
+
+    .columnswithswitch > div > div {
+        flex: 1;
+    }
+
+    .columnswithswitch > div > div:first-of-type {
+        margin-left: unset;
+    }
+}
+
+.columnswithswitch >  .rowdiv {
+    position: absolute;
+}
+
+.columnswithswitch .outscope {
+    visibility: hidden;
+}
+
+.columnswithswitch .inscope {
+    visibility: visible;
+    animation-name: fadeIn;
+    animation-duration: 200ms;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
+.columnswithswitch  #column1 {
+    margin-top: -160px;
+    background-color: white;
+    z-index: 1;
+    position: relative !important;
+    max-width: 1200;
+    max-height: 209;
+    display: flex !important;
+}
+
+.columnswithswitch ol {
+    margin-top: 0.5em;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+}
+
+.columnswithswitch ol li {
+    position: relative;
+    flex: 0 1 auto;
+    width: 10px;
+    height: 10px;
+    margin: 0 7px;
+    border-radius: 50%;
+    font-size: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: list-item;
+}
+
+
+.columnswithswitch ol .selected {
+    background-color: rgba(0,0,0,0.8) !important;
+}

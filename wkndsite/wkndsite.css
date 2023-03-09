@@ -1,0 +1,22 @@
+/* fonts */
+--heading-font-family: Asar, Georgia, "Times New Roman", Times, serif;
+--body-font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+--fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono", monospace;
+
+/* colors */
+--text-color: #202020;
+--link-color: #0045ff;
+--link-hover-color: #0045ff;
+--background-color: #ffffff;
+--overlay-background-color: #eeeeee;
+--highlight-background-color: #cccccc;
+
+/* sizes */
+--heading-font-size-xxl: 40px;
+--heading-font-size-xl: 36px;
+--heading-font-size-l: 24px;
+--heading-font-size-m: 16px;
+--heading-font-size-s: 14px;
+--heading-font-size-xs: 10px;
+--body-font-size-m: 18px;
+--body-font-size-s: 12px;

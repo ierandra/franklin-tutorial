@@ -1,11 +1,41 @@
 .columns > div {
-    display: flex;
-    flex-direction: column;
+    overflow: visible !important;
 }
 
 .columns img {
-    width: 100%;
+   max-width: 260px !important;
+   width: 260px !important;
+   max-height: 200px !important;
+   height: 200px !important;
+   margin-left: 0px !important;
 }
+
+.columns a {
+    display: block;
+    background-color: white !important;
+    color: #202020 !important;
+    font-size: 18px !important;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    text-decoration: none !important;
+    margin: 0px !important;
+    border: none !important;
+    padding: 0px 0px !important;
+    font-weight: 500 !important;
+}
+
+.columns p {
+        color: #696969 !important;
+        display: block;
+        font-size: 14px;
+        margin-top: 1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-transform: uppercase;
+        white-space: nowrap;
+        width: 260px;
+}
+
 
 @media (min-width: 900px) {
     .columns > div {
